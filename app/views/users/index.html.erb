@@ -1,0 +1,17 @@
+	<form class="col-md-4" action="/users/create" method="POST">
+	<h2>Register</h2>
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<p><input type="text" name="user[name]" placeholder="Name"></p>
+		<p><input type="text" name="user[email]" placeholder="Email"></p>
+		<p><input type="password" name="user[password]" placeholder="Password"></p>
+		<p><input type="password" name="user[password_confirmation]" placeholder="Confirm Password"></p>
+		<input type="submit" class="btn" value="Submit">
+		<%= flash[:success] %>
+	</form>
+	<form action="/sessions/create" class="col-md-offset-1" method="POST">
+	<h2>Login</h2>
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<p><input type="text" name="email" placeholder="Email"></p>
+		<p><input type="password" name="password" placeholder="Password"></p>
+		<input type="submit" class="btn" value="Login">
+	</form>
